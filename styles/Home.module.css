@@ -1,12 +1,29 @@
 .container {
   padding: 0 2rem;
+  min-width: 737px;
+  width: 50%;
+  margin: auto;
 }
 
+.settingBar, .setting {
+  display: flex;
+  justify-content: space-between;
+}
+.settingBar {
+  padding-top: 58px;
+}
+.setting {
+  width: 251px;
+  display: flex;
+  justify-content: space-between;
+}
 /* Dropdown */
 .dropdown {
   position: relative;
   width: 118px;
   height: 24px;
+  display: flex;
+  align-items: center;
 }
 .dropdown select {
   position: absolute;
@@ -21,6 +38,8 @@
 }
 .dropdown span {
   position: absolute;
+  top: -5px;
+  bottom: 0;
   right: 0;
   z-index: 1;
 }
@@ -31,6 +50,7 @@
   display: inline-block;
   width: 40px;
   height: 20px;
+  margin-right: 20px;
 }
 .switch input {
   opacity: 0;

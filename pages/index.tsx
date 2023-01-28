@@ -8,9 +8,9 @@ export default function Home() {
   return (
     <div className={styles.container}>
       <Heading />
-      <div id='settingBar'>
+      <div className={styles.settingBar}>
         <Image src={logo} alt="logo" width={32} height={36.5} />
-        <div id='setting'>
+        <div className={styles.setting}>
           <div className={styles.dropdown}>
             <select>
               <option value="">Sans Serif</option>
@@ -19,6 +19,7 @@ export default function Home() {
             </select>
             <span>&#x2304;</span>
           </div>
+          <span>&#x2502;</span>
           <div>
             <label className={styles.switch}>
               <input type="checkbox" />
