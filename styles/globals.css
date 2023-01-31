@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Inconsolata&family=Inter&family=Lora&display=swap');
 html,
 body {
   padding: 0;
@@ -14,6 +15,7 @@ a {
 
 * {
   box-sizing: border-box;
+  font-family: var(--font), var(--text);
 }
 
 [data-color-mode="light"] {
@@ -26,4 +28,17 @@ a {
   --common-text: #FFFFFF;
   --moon-color: #A445ED;
   --bg-color: #050505;
+}
+
+[text-mode="Sans Serif"] {
+  --font: 'Inter';
+  --text: 'sans-serif';
+}
+[text-mode="Mono"] {
+  --font: 'Inconsolata';
+  --text: 'mono';
+}
+[text-mode="Serif"] {
+  --font: 'Lora';
+  --text: 'serif';
 }
