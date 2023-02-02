@@ -23,6 +23,7 @@ a {
   --moon-color: #757575;
   --bg-color: #FFFFFF;
   --box-shadow: #0000001a;
+  --searchBarBox: #F4F4F4;
 }
 
 [data-color-mode="dark"] {
@@ -30,6 +31,7 @@ a {
   --moon-color: #A445ED;
   --bg-color: #050505;
   --box-shadow: #A445ED;
+  --searchBarBox: #1F1F1F;
 }
 
 [text-mode="Sans Serif"] {

@@ -9,6 +9,35 @@
   margin: auto;
 }
 
-@media (prefers-color-scheme: dark) {
-  
+/* Search Bar */
+.searchBar {
+  margin-top: 51.5px;
+  width: 100%;
+  padding: 20px 24px;
+  background-color: var(--searchBarBox);
+  border-radius: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px solid transparent;
+}
+.searchBar:focus-within {
+  border: 1px solid #A445ED;
+}
+.searchBar input {
+  background-color: transparent;
+  border: none;
+  width: 100%;
+  caret-color: #A445ED;
+  font-family: var(--font), var(--text);
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 24px;
+  color: var(--common-text);
+}
+.searchBar input:focus-visible {
+  outline: none;
+}
+.magnifyingGlass {
+  cursor: pointer;
 }
