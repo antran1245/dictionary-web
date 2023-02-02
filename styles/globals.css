@@ -22,12 +22,14 @@ a {
   --common-text: #2D2D2D;
   --moon-color: #757575;
   --bg-color: #FFFFFF;
+  --box-shadow: #0000001a;
 }
 
 [data-color-mode="dark"] {
   --common-text: #FFFFFF;
   --moon-color: #A445ED;
   --bg-color: #050505;
+  --box-shadow: #A445ED;
 }
 
 [text-mode="Sans Serif"] {
