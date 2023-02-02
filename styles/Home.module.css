@@ -41,3 +41,13 @@
 .magnifyingGlass {
   cursor: pointer;
 }
+.searchError {
+  border: 1px solid #FF5252;
+}
+
+.error {
+  color: #FF5252;
+}
+.errorMessage {
+  display: none;
+}
