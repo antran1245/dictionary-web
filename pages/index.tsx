@@ -4,17 +4,27 @@ import Heading from './components/Heading'
 import Setting from './components/Setting'
 import magnifyingGlass from '../assets/images/icon-search.svg'
 import styles from '../styles/Home.module.css'
+import Word from './components/Word'
 
 export default function Home() {
   const [mode, setMode] = useState<boolean>(false)
   const [text, setText] = useState<string>('Sans Serif')
   const [search, setSearch] = useState<{ word: string, error: boolean }>({ word: "", error: false })
 
+  /**
+   * Search for the word.
+   * If input is blank, error handling on the search bar and error message.
+   */
   const searchWord = () => {
     if (search.word === "") {
       setSearch({ word: "", error: true })
     } else {
       console.log(search.word)
+      fetch(`http://localhost:3000/api/dictionary`)
+        .then((data) => {
+          console.log('Returning data ', data)
+        })
+        .catch(err => console.log('Error ', err))
     }
   }
   return (
@@ -27,6 +37,7 @@ export default function Home() {
           <Image src={magnifyingGlass} alt="magnifyingGlass" width={15.55} height={15.55} className={styles.magnifyingGlass} onClick={() => searchWord()} />
         </div>
         <p className={`${search.error ? styles.error : styles.errorMessage}`}>Whoops, can&#8217;t be empty…</p>
+        <Word />
       </div>
     </div>
   )
