@@ -1,0 +1,21 @@
+.content h1, .content p {
+  margin: 0;
+}
+.content {
+  margin-top: 45px;
+}
+.wordHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 114px;
+}
+.title {
+  font-size: 64px;
+  font-weight: 700;
+  line-height: 77px;
+  color: var(--common-text);
+}
+.phonetic {
+  color: #A445ED;
+}
