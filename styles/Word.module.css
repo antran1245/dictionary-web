@@ -4,6 +4,8 @@
 .content {
   margin-top: 45px;
 }
+
+/* Word */
 .wordHeader {
   display: flex;
   align-items: center;
@@ -18,4 +20,41 @@
 }
 .phonetic {
   color: #A445ED;
+}
+
+/* part Of Speech */
+.partOfSpeech {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 40px;
+  color: var(--common-text);
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 29px;
+  font-style: italic;
+}
+.partOfSpeech div {
+  margin: 0;
+  width: 90%;
+  height: 1px;
+  background-color: #E9E9E9;
+}
+
+/* Definition */
+p.meaning, p.example {
+  color: #757575;
+  font-weight: 400;
+  line-height: 24px;
+}
+p.meanding {
+  font-size: 20px;
+  margin-top: 40px;
+}
+p.example {
+  font-size: 18px;
+  margin-top: 13px;
+}
+.listing li{
+  display: flex;
 }
