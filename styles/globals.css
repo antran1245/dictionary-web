@@ -24,6 +24,7 @@ a {
   --bg-color: #FFFFFF;
   --box-shadow: #0000001a;
   --searchBarBox: #F4F4F4;
+  --dropMenu: #FFFFFF;
 }
 
 [data-color-mode="dark"] {
@@ -32,6 +33,7 @@ a {
   --bg-color: #050505;
   --box-shadow: #A445ED;
   --searchBarBox: #1F1F1F;
+  --dropMenu: #1F1F1F;
 }
 
 [text-mode="Sans Serif"] {

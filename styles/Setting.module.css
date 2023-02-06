@@ -51,6 +51,7 @@
   border-radius: 16px;
   padding: 24px 0 0 24px;
   box-shadow: 0px 5px 30px var(--box-shadow);
+  background-color: var(--dropMenu);
   margin-top: 35px;
 }
 .dropdown .select p {

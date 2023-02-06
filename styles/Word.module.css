@@ -65,6 +65,7 @@ p.example {
 }
 .listing li{
   display: flex;
+  color: #A445ED;
 }
 .synonyms span, .antonyms span {
   color: #A445ED;

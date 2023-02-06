@@ -14,6 +14,7 @@ type SettingProps = {
 
 export default function Setting({ mode, setMode, text, setText }: SettingProps) {
   const [show, setShow] = useState<boolean>(false)
+
   return (
     <div className={styles.settingBar}>
       <Image src={logo} alt="logo" width={32} height={36.5} />
@@ -30,10 +31,10 @@ export default function Setting({ mode, setMode, text, setText }: SettingProps) 
         <span>&#x2502;</span>
         <div>
           <label className={styles.switch}>
-            <input type="checkbox" />
+            <input type="checkbox" onChange={() => setMode(!mode)} checked={mode} />
             <span className={styles.slider}></span>
           </label>
-          <Image src={moon} alt="moon" className={mode ? styles.moon : ""} width={20} height={20} onClick={() => setMode(!mode)} />
+          <Image src={moon} alt="moon" className={mode ? styles.moon : ""} width={20} height={20} />
         </div>
       </div>
     </div>
