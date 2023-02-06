@@ -32,13 +32,23 @@ export default function Home() {
         .catch(err => console.log('Error ', err))
     }
   }
+
+  /**
+   * Search an entered word by pressing the enter key instead of clicking the magnifying glass.
+   * @param e -> Get the key press
+   */
+  const handleKeyDown = (e: React.KeyboardEvent) => {
+    if (e.key === "Enter") {
+      searchWord()
+    }
+  }
   return (
     <div className={styles.container} data-color-mode={`${mode ? 'dark' : 'light'}`} text-mode={text || 'Sans Serif'}>
       <div>
         <Heading />
         <Setting mode={mode} setMode={setMode} text={text} setText={setText} />
         <div className={`${styles.searchBar} ${(search.error ? styles.searchError : '')}`}>
-          <input type={"text"} placeholder="Search for any word..." value={search.word || ""} onChange={(e) => setSearch({ word: e.target.value, error: false })} />
+          <input type={"text"} placeholder="Search for any word..." value={search.word || ""} onChange={(e) => setSearch({ word: e.target.value, error: false })} onKeyDown={(e) => handleKeyDown(e)} />
           <Image src={magnifyingGlass} alt="magnifyingGlass" width={15.55} height={15.55} className={styles.magnifyingGlass} onClick={() => searchWord()} />
         </div>
         <p className={`${search.error ? styles.error : styles.errorMessage}`}>Whoops, can&#8217;t be empty…</p>
