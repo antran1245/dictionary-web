@@ -1,5 +1,6 @@
 import { Data } from "../../context/DictionaryType"
 import play_button from '../../assets/images/icon-play.svg'
+import new_window from '../../assets/images/icon-new-window.svg'
 import styles from '../../styles/Word.module.css'
 import Image from "next/image";
 
@@ -22,14 +23,14 @@ export default function Word({ word }: WordProps) {
           return <div key={index1}>
             <div className={styles.partOfSpeech}>
               <p>{item.partOfSpeech}</p>
-              <div />
+              <div className={styles.horizontalLine} />
             </div>
             <p className={styles.meaning}>Meaning</p>
             {
               item.definitions.map((define, index2) => {
                 return <div className={styles.meanings} key={index2}>
                   <ul className={styles.listing}>
-                    <li>&#x2022;
+                    <li>&#x2022;&#x2800;
                       <span>
                         <p className={styles.definition}>
                           {define.definition}
@@ -82,6 +83,18 @@ export default function Word({ word }: WordProps) {
           </div>
         })
         }
+        <footer>
+          <div className={styles.horizontalLine} />
+          <div className={styles.sources}>
+            <p>Source</p>
+            {word.sourceUrls.map((item, index5) => {
+              return <div className={styles.source} key={index5}>
+                <a href={item}>{item}</a>
+                <Image src={new_window} alt="new window icon" width={12} height={12} />
+              </div>
+            })}
+          </div>
+        </footer>
       </div>
     )
   }
