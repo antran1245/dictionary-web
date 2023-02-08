@@ -10,7 +10,19 @@ interface WordProps {
 }
 
 export default function Word({ word, searchByClick }: WordProps) {
+
   if (word && "word" in word) {
+    const pronounceWord = () => {
+      for (let i = 0; i < word.phonetics.length; i++) {
+        if (word.phonetics[i].audio !== "") {
+          let sound = new Audio(word.phonetics[i].audio)
+          sound.volume = 1
+          sound.play()
+          break
+        }
+      }
+    }
+
     return (
       <div className={styles.content}>
         <div className={styles.wordHeader}>
@@ -18,7 +30,7 @@ export default function Word({ word, searchByClick }: WordProps) {
             <h1 className={styles.title}>{word.word}</h1>
             <p className={styles.phonetic}>{word.phonetic || word.phonetics[word.phonetics.length - 1].text}</p>
           </div>
-          <Image src={play_button} alt="play button" width={75} height={75} />
+          <Image src={play_button} alt="play button" width={75} height={75} onClick={() => pronounceWord()} />
         </div>
         {word.meanings.map((item, index1) => {
           return <div key={index1}>

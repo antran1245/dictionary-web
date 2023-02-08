@@ -28,6 +28,7 @@ export default function Home() {
         .then(data => {
           if (!('title' in data)) {
             setWord(data[0])
+            console.log(data[0])
             setSearch({ ...search, found: true })
           } else {
             setWord(null)

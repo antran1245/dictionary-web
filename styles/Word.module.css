@@ -27,7 +27,9 @@
 .phonetic {
   color: #A445ED;
 }
-
+.wordHeader img {
+  cursor: pointer;
+}
 /* part Of Speech */
 .partOfSpeech {
   display: flex;
