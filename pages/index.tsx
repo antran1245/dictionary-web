@@ -19,6 +19,7 @@ export default function Home() {
    * If input is blank, error handling on the search bar and error message.
    */
   const searchWord = () => {
+    console.log(search)
     if (search.word === "") {
       setSearch({ word: "", error: true, found: true })
     } else {
@@ -46,6 +47,25 @@ export default function Home() {
       searchWord()
     }
   }
+
+  /**
+   * Search a word by selecting from the synonyms and antonym section of definition
+   * @param word -> string for selected word
+   */
+  const searchByClick = (word: string) => {
+    fetch(`https://api.dictionaryapi.dev/api/v2/entries/en/${word}`)
+      .then(resp => resp.json())
+      .then(data => {
+        if (!('title' in data)) {
+          setWord(data[0])
+          setSearch({ ...search, found: true, word: word })
+        } else {
+          setWord(null)
+          setSearch({ ...search, found: false, word: word })
+        }
+      })
+      .catch(() => console.log('Error'))
+  }
   return (
     <div className={styles.container} data-color-mode={`${mode ? 'dark' : 'light'}`} text-mode={text || 'Sans Serif'}>
       <div>
@@ -57,7 +77,7 @@ export default function Home() {
         </div>
         <p className={`${search.error ? styles.error : styles.errorMessage}`}>Whoops, can&#8217;t be empty…</p>
         {search.found ?
-          <Word word={word} /> : <NotFound />
+          <Word word={word} searchByClick={searchByClick} /> : <NotFound />
         }
       </div>
     </div>

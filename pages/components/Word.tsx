@@ -6,9 +6,10 @@ import Image from "next/image";
 
 interface WordProps {
   word: Data | null;
+  searchByClick(word: string): void;
 }
 
-export default function Word({ word }: WordProps) {
+export default function Word({ word, searchByClick }: WordProps) {
   if (word && "word" in word) {
     return (
       <div className={styles.content}>
@@ -43,7 +44,7 @@ export default function Word({ word }: WordProps) {
                         <p className={styles.synonyms}>
                           {define.synonyms.length > 0 ? 'Synonyms' : ''}
                           {define.synonyms.map((synonym, index3) => {
-                            return <span key={index3} className={styles.synonyms}>
+                            return <span key={index3} className={styles.synonyms} onClick={() => searchByClick(synonym)}>
                               {synonym}
                             </span>
                           })}
@@ -51,7 +52,7 @@ export default function Word({ word }: WordProps) {
                         <p className={styles.antonyms}>
                           {define.antonyms.length > 0 ? 'Antonyms' : ''}
                           {define.antonyms.map((antonym, index4) => {
-                            return <span key={index4} className={styles.antonyms}>
+                            return <span key={index4} className={styles.antonyms} onClick={() => searchByClick(antonym)}>
                               {antonym}
                             </span>
                           })}
@@ -67,7 +68,7 @@ export default function Word({ word }: WordProps) {
             <p className={styles.synonyms}>
               {item.synonyms.length > 0 ? 'Synonyms' : ''}
               {item.synonyms.map((synonym, index3) => {
-                return <span key={index3} className={styles.synonyms}>
+                return <span key={index3} className={styles.synonyms} onClick={() => searchByClick(synonym)}>
                   {synonym}
                 </span>
               })}
@@ -75,7 +76,7 @@ export default function Word({ word }: WordProps) {
             <p className={styles.antonyms}>
               {item.antonyms.length > 0 ? 'Antonyms' : ''}
               {item.antonyms.map((antonym, index4) => {
-                return <span key={index4} className={styles.antonyms}>
+                return <span key={index4} className={styles.antonyms} onClick={() => searchByClick(antonym)}>
                   {antonym}
                 </span>
               })}
