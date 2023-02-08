@@ -1,5 +1,6 @@
 .content h1, .content p {
   margin: 0;
+  font-family: var(--font), var(--text);
 }
 .content {
   margin-top: 45px;

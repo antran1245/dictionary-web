@@ -1,0 +1,22 @@
+.found {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  margin-top: 132px;
+  font-family: var(--font), var(--text);
+}
+.found span {
+  font-size: 64px;
+}
+.found h3 {
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 24px;
+  color: var(--common-text);
+}
+.found p {
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 24px;
+  color: #757575;
+}

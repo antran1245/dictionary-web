@@ -9,7 +9,7 @@ interface WordProps {
 }
 
 export default function Word({ word }: WordProps) {
-  if (word) {
+  if (word && "word" in word) {
     return (
       <div className={styles.content}>
         <div className={styles.wordHeader}>
@@ -99,6 +99,6 @@ export default function Word({ word }: WordProps) {
     )
   }
   return (
-    <div>Search for a word</div>
+    <div></div>
   )
 }
