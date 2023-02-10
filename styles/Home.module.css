@@ -5,7 +5,8 @@
 }
 .container > div {
   min-width: 737px;
-  width: 50%;
+  width: 100%;
+  max-width: 50%;
   margin: auto;
 }
 
@@ -50,4 +51,10 @@
 }
 .errorMessage {
   display: none;
+}
+
+@media only screen and (max-width: 480px) {
+  .container > div {
+    min-width: 90%;
+  }
 }

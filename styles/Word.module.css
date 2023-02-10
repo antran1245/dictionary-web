@@ -106,3 +106,9 @@ p.example {
 .content .source img {
   margin-left: 15px;
 }
+
+@media only screen and (max-width: 1024px) {
+  .content {
+    margin-top: 43px;
+  }
+}
