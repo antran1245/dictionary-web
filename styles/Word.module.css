@@ -112,3 +112,39 @@ p.example {
     margin-top: 43px;
   }
 }
+@media only screen and (max-width: 480px) {
+  .content {
+    margin-top: 24px;
+  }
+  .wordHeader {
+    min-height: 71px;
+  }
+  .title {
+    font-size: 32px;
+    line-height: 39px;
+  }
+  .phonetic {
+    font-size: 18px;
+    line-height: 24px;
+  }
+  .wordHeader img {
+    width: 48px;
+    height: 48px;
+  }
+  .partOfSpeech, p.meaning {
+    margin-top: 32px;
+  }
+  p.meaning, .synonyms, .antonyms {
+    font-size: 16px;
+  }
+  p.definition, p.example {
+    font-size: 15px;
+  }
+  .sources {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .content .source {
+    margin-left: 0;
+  }
+}
